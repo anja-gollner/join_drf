@@ -10,7 +10,7 @@ from .permissions import IsStaffOrSuperUserForTasks, IsAuthenticated, IsSuperUse
 class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [IsSuperUserCRUDIsStaffCRUIsActiveOnlyRead]
+    permission_classes = [IsAuthenticated]
 
 
 class SubtaskViewSet(viewsets.ModelViewSet):
