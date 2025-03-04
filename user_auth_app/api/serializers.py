@@ -36,6 +36,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
             email=self.validated_data['email'], username=username)
         account.set_password(pw)
         account.first_name = full_name
+        account.is_staff = True
         account.save()
         return account
 
